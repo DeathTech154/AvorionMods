@@ -16,7 +16,7 @@ function RespawnResourceAsteroids.initialize()
     SSector = {-154, 422}
     RespawnAll = 0
     -- End Config
-    print("Attempting to spawn asteroids.")
+    
     SectLocX, SectLocY = Sector():getCoordinates()
     SectLoc = {SectLocX,SectLocY}
     --print(tostring(SSector[1])..tostring(SSector[2]))
@@ -29,8 +29,8 @@ function RespawnResourceAsteroids.initialize()
     end
     if SectLoc[1] == SSector[1] then
     if SectLoc[2] == SSector[2] then
-    print("Found Starting Sector")
-    print("Attempting to spawn asteroids.")
+    
+    
     local richAsteroids = {Sector():getEntitiesByComponent(ComponentType.MineableMaterial)}
     if #richAsteroids >= 5 then return end
 
@@ -66,11 +66,11 @@ function RespawnResourceAsteroids.initialize()
             local asteroid = generator:createSmallAsteroid(translation, size, true, generator:getAsteroidType())
 
             table.insert(spawned, asteroid)
-            print("Added Asteroid.")
+            
         end
     end
     Placer.resolveIntersections(spawned)
-    print("Asteroids were placed.")
+    
     end
     end
 end
